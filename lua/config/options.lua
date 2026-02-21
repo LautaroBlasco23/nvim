@@ -9,7 +9,6 @@ opt.number = true
 opt.relativenumber = true
 opt.cursorline = true
 opt.signcolumn = "yes"
-opt.colorcolumn = "80"
 opt.cmdheight = 0
 opt.showmode = false
 opt.termguicolors = true
@@ -50,7 +49,7 @@ opt.updatetime = 200
 opt.completeopt = "menu,menuone,noselect"
 opt.wildmode = "longest:full,full"
 
--- Folding (handled by nvim-ufo if added later)
+-- Folding
 opt.foldlevel = 99
 
 -- Misc
@@ -81,10 +80,10 @@ vim.diagnostic.config({
   severity_sort = true,
   signs = {
     text = {
-      [vim.diagnostic.severity.ERROR] = " ",
-      [vim.diagnostic.severity.WARN] = " ",
-      [vim.diagnostic.severity.HINT] = " ",
-      [vim.diagnostic.severity.INFO] = " ",
+      [vim.diagnostic.severity.ERROR] = "E",
+      [vim.diagnostic.severity.WARN]  = "W",
+      [vim.diagnostic.severity.HINT]  = "H",
+      [vim.diagnostic.severity.INFO]  = "I",
     },
   },
 })

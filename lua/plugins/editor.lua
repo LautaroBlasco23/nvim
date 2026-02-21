@@ -15,6 +15,7 @@ return {
     keys = {
       { "<leader><space>", "<cmd>Telescope buffers sort_mru=true sort_lastused=true<cr>", desc = "Switch buffer" },
       { "<leader>/", "<cmd>Telescope live_grep<cr>", desc = "Grep (root dir)" },
+      { "<leader>sg", "<cmd>Telescope live_grep<cr>", desc = "Live grep" },
       { "<leader>:", "<cmd>Telescope command_history<cr>", desc = "Command history" },
       { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find files" },
       { "<leader>fF", "<cmd>Telescope find_files hidden=true<cr>", desc = "Find files (hidden)" },

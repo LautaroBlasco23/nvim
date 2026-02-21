@@ -63,6 +63,8 @@ map("x", "p", [["_dP]])
 -- Diagnostics navigation
 map("n", "]d", function() vim.diagnostic.goto_next() end, { desc = "Next diagnostic" })
 map("n", "[d", function() vim.diagnostic.goto_prev() end, { desc = "Prev diagnostic" })
+map("n", "]e", function() vim.diagnostic.goto_next({ severity = vim.diagnostic.severity.ERROR }) end, { desc = "Next error" })
+map("n", "[e", function() vim.diagnostic.goto_prev({ severity = vim.diagnostic.severity.ERROR }) end, { desc = "Prev error" })
 map("n", "<leader>cd", function() vim.diagnostic.open_float() end, { desc = "Line diagnostics" })
 
 -- Terminal

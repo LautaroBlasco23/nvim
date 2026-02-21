@@ -75,59 +75,13 @@ return {
     },
   },
 
-  -- Treesitter - better syntax highlighting and text objects
+  -- Treesitter - better syntax highlighting
   {
     "nvim-treesitter/nvim-treesitter",
+    lazy = false,
     build = ":TSUpdate",
-    event = { "BufReadPost", "BufNewFile" },
-    dependencies = {
-      "nvim-treesitter/nvim-treesitter-textobjects",
-    },
-    opts = {
-      ensure_installed = {
-        "bash", "c", "css", "diff", "go", "html", "javascript",
-        "json", "jsonc", "lua", "luadoc", "markdown", "markdown_inline",
-        "python", "query", "regex", "rust", "toml", "tsx", "typescript",
-        "vim", "vimdoc", "yaml",
-      },
-      auto_install = true,
-      highlight = { enable = true },
-      indent = { enable = true },
-      incremental_selection = {
-        enable = true,
-        keymaps = {
-          init_selection = "<C-space>",
-          node_incremental = "<C-space>",
-          scope_incremental = false,
-          node_decremental = "<bs>",
-        },
-      },
-      textobjects = {
-        move = {
-          enable = true,
-          goto_next_start = {
-            ["]f"] = "@function.outer",
-            ["]c"] = "@class.outer",
-            ["]a"] = "@parameter.inner",
-          },
-          goto_next_end = {
-            ["]F"] = "@function.outer",
-            ["]C"] = "@class.outer",
-          },
-          goto_previous_start = {
-            ["[f"] = "@function.outer",
-            ["[c"] = "@class.outer",
-            ["[a"] = "@parameter.inner",
-          },
-          goto_previous_end = {
-            ["[F"] = "@function.outer",
-            ["[C"] = "@class.outer",
-          },
-        },
-      },
-    },
-    config = function(_, opts)
-      require("nvim-treesitter").setup(opts)
+    config = function()
+      require("nvim-treesitter").setup()
     end,
   },
 
